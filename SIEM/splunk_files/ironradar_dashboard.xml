@@ -1,0 +1,223 @@
+{
+	"visualizations": {
+		"viz_NkmiA4DX": {
+			"type": "splunk.pie",
+			"title": "Top Ports",
+			"dataSources": {
+				"primary": "ds_ZqGE9VXR"
+			},
+			"description": "Top ports being used by adversaries for communications"
+		},
+		"viz_xSZd5kZ9": {
+			"type": "splunk.pie",
+			"dataSources": {
+				"primary": "ds_xdVzHqg8"
+			},
+			"showProgressBar": false,
+			"showLastUpdated": false,
+			"options": {
+				"labelDisplay": "valuesAndPercentage"
+			},
+			"title": "C2 Frameworks",
+			"description": "Breakdown of C2 frameworks that we are actively tracking"
+		},
+		"viz_dLReMmmU": {
+			"type": "splunk.singlevalue",
+			"dataSources": {
+				"primary": "ds_vhOo3Lox"
+			},
+			"showProgressBar": false,
+			"showLastUpdated": false,
+			"title": "Total Indicators"
+		},
+		"viz_1nYMzvUf": {
+			"type": "splunk.bar",
+			"dataSources": {
+				"primary": "ds_xLn7de9Y"
+			},
+			"showProgressBar": false,
+			"showLastUpdated": false,
+			"title": "Confidence",
+			"description": "Our confidence levels given a specific detection"
+		},
+		"viz_MMQt5583": {
+			"type": "splunk.bar",
+			"dataSources": {
+				"primary": "ds_ASodBtaR_ds_xLn7de9Y"
+			},
+			"showProgressBar": false,
+			"showLastUpdated": false,
+			"title": "TLP Markings"
+		},
+		"viz_E8UVXX18": {
+			"type": "splunk.singlevalue",
+			"dataSources": {
+				"primary": "ds_JLYlSu45"
+			},
+			"title": "# of C2 Hosts",
+			"description": "This is the number of hostnames being used for C2 communications"
+		},
+		"viz_PVsMixbd": {
+			"type": "splunk.singlevalue",
+			"dataSources": {
+				"primary": "ds_MVVnh04Z_ds_JLYlSu45"
+			},
+			"title": "# of C2 Servers",
+			"description": "This is a superset of unique malicious listeners, servers, and panels"
+		}
+	},
+	"dataSources": {
+		"ds_ZqGE9VXR": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | stats count by port"
+			},
+			"name": "Search_top_ports"
+		},
+		"ds_xdVzHqg8": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | stats count by threat"
+			},
+			"name": "Search_c2_frameworks"
+		},
+		"ds_xLn7de9Y": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | stats count by confidence"
+			},
+			"name": "Search_confidence"
+		},
+		"ds_ASodBtaR_ds_xLn7de9Y": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | stats count by tlp"
+			},
+			"name": "Search_tlp"
+		},
+		"ds_vhOo3Lox": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | stats dc(indicator)"
+			},
+			"name": "Search_unique_indicators"
+		},
+		"ds_JLYlSu45": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | \nsearch threat_type = c2_host |  stats dc(indicator)"
+			},
+			"name": "Search_c2_hosts"
+		},
+		"ds_MVVnh04Z_ds_JLYlSu45": {
+			"type": "ds.search",
+			"options": {
+				"query": "index=\"ironradar\" | \nsearch threat_type = c2_server |  stats dc(indicator)"
+			},
+			"name": "Search_C2_servers"
+		}
+	},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"latest": "$global_time.latest$",
+						"earliest": "$global_time.earliest$"
+					}
+				}
+			}
+		}
+	},
+	"inputs": {
+		"input_global_trp": {
+			"type": "input.timerange",
+			"options": {
+				"token": "global_time",
+				"defaultValue": "-24h@h,now"
+			},
+			"title": "Global Time Range"
+		}
+	},
+	"layout": {
+		"type": "grid",
+		"options": {},
+		"structure": [
+			{
+				"item": "viz_dLReMmmU",
+				"type": "block",
+				"position": {
+					"x": 0,
+					"y": 0,
+					"w": 600,
+					"h": 200
+				}
+			},
+			{
+				"item": "viz_xSZd5kZ9",
+				"type": "block",
+				"position": {
+					"x": 0,
+					"y": 200,
+					"w": 600,
+					"h": 1400
+				}
+			},
+			{
+				"item": "viz_1nYMzvUf",
+				"type": "block",
+				"position": {
+					"x": 0,
+					"y": 1600,
+					"w": 600,
+					"h": 400
+				}
+			},
+			{
+				"item": "viz_E8UVXX18",
+				"type": "block",
+				"position": {
+					"x": 600,
+					"y": 0,
+					"w": 300,
+					"h": 200
+				}
+			},
+			{
+				"item": "viz_NkmiA4DX",
+				"type": "block",
+				"position": {
+					"x": 600,
+					"y": 200,
+					"w": 600,
+					"h": 1400
+				}
+			},
+			{
+				"item": "viz_MMQt5583",
+				"type": "block",
+				"position": {
+					"x": 600,
+					"y": 1600,
+					"w": 600,
+					"h": 400
+				}
+			},
+			{
+				"item": "viz_PVsMixbd",
+				"type": "block",
+				"position": {
+					"x": 900,
+					"y": 0,
+					"w": 300,
+					"h": 200
+				}
+			}
+		],
+		"globalInputs": [
+			"input_global_trp"
+		]
+	},
+	"description": "",
+	"title": "IronRadar"
+}
