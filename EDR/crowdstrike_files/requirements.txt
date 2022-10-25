@@ -1,3 +1,4 @@
 pandas
-falconpy
-dotenv
+crowdstrike-falconpy
+python-dotenv
+requests
