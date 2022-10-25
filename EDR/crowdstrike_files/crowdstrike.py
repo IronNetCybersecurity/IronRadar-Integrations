@@ -26,6 +26,7 @@ if r.status_code == 200:
 
     falcon = IOC(client_id=os.getenv("FALCON_CLIENT_ID"),client_secret=os.getenv("FALCON_CLIENT_SECRET"))
     df = pd.read_csv("ironradar.csv", usecols = ['indicator','threat','confidence','tlp', 'type'])
+    df = df.drop_duplicates(subset='indicator', keep="first")
     num_indicators = len(df)
 
     print(f"Loading IOCs from: {os.getcwd()}/ironradar.csv into Crowdstrike")
@@ -65,7 +66,7 @@ if r.status_code == 200:
 
         count += 1
 
-print(f"Completed loading IOCs into Crowdstrike")
+    print(f"Completed loading IOCs into Crowdstrike")
 
 elif r.status_code == 400:
     print('Check your url, docs: https://api.threatanalysis.io/prod/docs/index.html')
