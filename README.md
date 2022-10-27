@@ -20,3 +20,4 @@ If you want to interact with the API with your own custom solution or code, you 
 - [Firewalls](#)
 - [SIEM](./SIEM/README.md)
 - [EDR](./EDR/README.md)
+- [SOAR](./SOAR/README.md)
