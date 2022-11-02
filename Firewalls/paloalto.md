@@ -9,17 +9,14 @@ Tested on:
 ### Download AWS CA Cert & Upload
 
 1. Download the AWS Starfield cert here: https://ssl-tools.net/certificates/ad7e1c28b064ef8f6003402014c3d0e3370eb58a.pem
-2. Login to the FW and go to the certificate store
-3. Upload the certificate, click on the cert, and check `Trusted Root CA`
+2. In Panorama: Click on device in the top toolbar, and then on the left hand side certificate management --> certificates
+3. Make sure the appropriate template is selected for the firewall that you want to push to (on the top toolbar)
+4. On the bottom toolbar, click import, choose certificate, give it a name - use PEM for file format
+5. Manually click on the starfield cert and check Trusted Root CA, click ok
+6. Click certificate profile, on bottom left click add
+7. Click add and select the starfield cert and click ok
 
-### Panorama
-1. In Panorama: Click on device in the top toolbar, and then on the left hand side certificate management --> certificates
-2. Make sure the appropriate template is selected for the firewall that you want to push to (on the top toolbar)
-3. On the bottom toolbar, click import, choose certificate, give it a name - use PEM for file format
-4. Manually click on the starfield cert and check Trusted Root CA, click ok
-5. Click certificate profile, on bottom left click add
-6. Click add and select the starfield cert and click ok
-
+Note: If you are using a non-Panorama managed firewall, the steps are the same just without needing to specify a template
 
 ### Create EDL
 
@@ -27,7 +24,7 @@ Tested on:
 2. Add give it a name, click Shared (if pushing to multiple firewalls)
 - type: `IP List` 
 - url: `https://api.threatanalysis.io/integrations/all/30d/txt?filter=ip`
-- Certificate profile: select cert name `name`
+- Certificate profile: select the certificate profile created in the previous section
 - client auth
 - user: user
 - password: `api key`
@@ -38,17 +35,19 @@ Tested on:
 
 ### Create Policies
 
-1. Click on policies
-2. Add to your current blocklist policy and add EDL (block in destination)
-3. Drop or deny rules
+1. Click on Policies
+2. Create a new security policy and put the new IP EDL in the Source Address field (if wanting to block inbound connections from these IPs) OR put the new IP EDL in the Destination Address field (if wanting to block connections going TO these IPs)
+3. For the URL EDL, you will want to create another security policy, placing the URL EDL in the URL Category field
+4. Be sure to change the action to either Drop/Deny, and have these policies at the top of your security policies
+
 
 ### Submit changes!
 
 Commit and push, if local, do a commit
 
-### Troubleshooting
+## Troubleshooting
 
-Here are some commands that can help you troubleshoot the connection should you run into any issues
+Here are some commands to run on the firewall that can help you troubleshoot the connection, should you run into any issues
 
 This will show how many valid/invalid entries got pulled
 
