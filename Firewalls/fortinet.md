@@ -26,7 +26,7 @@ Note: If you are using a non-Panorama managed firewall, the steps are the same j
 - url: `https://api.threatanalysis.io/integrations/all/30d/txt?filter=ip`
 - Certificate profile: select the certificate profile created in the previous section
 - client auth
-- user: user
+- user: `user`
 - password: `api key`
 - Check for updates: `daily`
 3. Repeat steps 1 & 2 but this time we will add the domain list, everything stays the same except:
