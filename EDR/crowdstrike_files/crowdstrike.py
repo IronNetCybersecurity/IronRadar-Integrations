@@ -27,6 +27,7 @@ if r.status_code == 200:
     falcon = IOC(client_id=os.getenv("FALCON_CLIENT_ID"),client_secret=os.getenv("FALCON_CLIENT_SECRET"))
     df = pd.read_csv("ironradar.csv", usecols = ['indicator','threat','confidence','tlp', 'type'])
     df = df.drop_duplicates(subset='indicator', keep="first")
+    df.index = pd.RangeIndex(len(df))
     num_indicators = len(df)
 
     print(f"Loading IOCs from: {os.getcwd()}/ironradar.csv into Crowdstrike")
