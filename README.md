@@ -1,5 +1,7 @@
 # IronRadar Integrations
 
+![IronRadar_logo_500px](https://user-images.githubusercontent.com/13635567/202509874-7aed71e6-e8e9-4f23-bc39-5c4ef83f52b6.png)
+
 ## About IronRadar
 
 IronRadar is a threat intelligence feed that enables cybersecurity teams to proactively block and gather context on malicious adversary infrastructure. It provides security operations, incident response, and cyber threat intelligence teams with everything they need to quickly detect C2 servers before they are used in an attack and take action against today’s most sophisticated attackers.
