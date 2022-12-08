@@ -4,8 +4,10 @@
 
 ## About IronRadar
 
-IronRadar is a threat intelligence feed that enables cybersecurity teams to proactively block and gather context on malicious adversary infrastructure. It provides security operations, incident response, and cyber threat intelligence teams with everything they need to quickly detect C2 servers before they are used in an attack and take action against today’s most sophisticated attackers.
-
+IronRadar is a threat intelligence feed that enables cybersecurity teams to proactively block and gather context on malicious
+adversary infrastructure. It provides security operations, incident response, and cyber threat intelligence teams with everything
+they need to quickly detect C2 servers before they are used in an attack and take action against today’s most sophisticated
+attackers.
 
 ## Getting an API-Key
 
@@ -15,6 +17,9 @@ IronRadar is a threat intelligence feed that enables cybersecurity teams to proa
 
 ## API Endpoints & Docs
 If you want to interact with the API with your own custom solution or code, you can interact with the API the way you would like any other REST API. Click on this link to see our [Swagger docs](https://api.threatanalysis.io/prod/docs/index.html)
+
+## Threat Type Definitions
+For definitions on how we define threat types, please refer to the [documentation here](./definitions.md)
 
 ## Current Integrations
 
