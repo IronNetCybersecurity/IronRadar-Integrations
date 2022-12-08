@@ -1,6 +1,6 @@
 # IronRadar Integrations
 
-![IronRadar_logo_500px](https://user-images.githubusercontent.com/13635567/202509874-7aed71e6-e8e9-4f23-bc39-5c4ef83f52b6.png)
+![IronaRadar-logo-on-dark-light-blue](https://user-images.githubusercontent.com/13635567/206558460-63df9365-63a8-493f-ac50-bbadf3e058c1.png)
 
 ## About IronRadar
 
