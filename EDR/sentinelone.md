@@ -29,7 +29,7 @@ python3 sentinelone.py
 1. In your SentinelOne instance, click on `visibility` on the left hand side menu, and then click on `Star Custom Rules` on the top menu.
 2. Click on `New Rule` and let's create a rule with the following options:
 - Rule Name: `IronRadar Detection`
-- Description: `IronRadar threat intelligence source that proactively detects adversary infrastructure`
+- Description: `IronRadar threat intelligence source for proactive detection of adversary infrastructure`
 - Rule Severity: `High`
 - Rule Type: `Permanent`
 3. Click next and copy and paste the query below:
