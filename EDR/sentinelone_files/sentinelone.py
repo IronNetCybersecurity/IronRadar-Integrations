@@ -34,6 +34,7 @@ if r.status_code == 200:
 
     print(f"Loading IOCs from: {os.getcwd()}/ironradar.csv into SentinelOne")
 
+    tiitems = []
     count = 0 
     while count < num_indicators:
         if df['type'][count] == 'ipv4-addr':
@@ -57,6 +58,11 @@ if r.status_code == 200:
         tiitems.append(newti)
 
         count += 1
+    
+    if len(tiitems) > 1:
+        tidata = [current_ioc.to_json() for current_ioc in tiitems]
+    else:
+        tidata = [tiitems[0].to_json()]
 
     con = Management(f'{os.getenv("portal_url")}', api_token=f'{os.getenv("api_token")}')
     
@@ -72,7 +78,11 @@ if r.status_code == 200:
         print("Failed to create/update IOC, response_code: {}".format(addti.status_code))
         print(f"Error: {addti.errors}")
     else:
-        print("Completed loading IOCs into Crowdstrike")
+        print("Completed loading IOCs into SentinelOne")
+
+    params = {'source': 'IronRadar'}
+    getti = con.client.get(endpoint=THREAT_INTELLIGENCE, params=params)
+    print(f"Total Number of IronRadar Indicators in SentinelOne: {getti.pagination['totalItems']}")
 
 elif r.status_code == 400:
     print('Check your url, docs: https://api.threatanalysis.io/prod/docs/index.html')
