@@ -34,7 +34,6 @@ if r.status_code == 200:
 
     print(f"Loading IOCs from: {os.getcwd()}/ironradar.csv into SentinelOne")
 
-
     tiitems = []
     count = 0 
     while count < num_indicators:
