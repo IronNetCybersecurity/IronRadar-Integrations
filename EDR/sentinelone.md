@@ -1,6 +1,6 @@
 # SentinelOne Integration [Beta]
 
-** Note: The threat intelligence feature for SentinelOne is not GA yet. If you want to enable this feature, reach out to your account team to have it enabled.
+** Note: The threat intelligence feature for SentinelOne is not GA yet. If you want to enable this feature, reach out to your SentinelOne account team to have it enabled.
 
 ### Prep Python Env.
 
