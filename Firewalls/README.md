@@ -4,4 +4,4 @@
 | ------------- | ------------- | ------------- |
 | [Palo Alto](./paloalto.md) | :x:  | :white_check_mark: (txt) | 
 | [Fortinet](./fortinet.md) | :x:  | :white_check_mark: (txt) | 
-| [Checkpoint](./checkpoint.md) | :x:  | :white_check_mark: (txt) |
+| [Checkpoint](./checkpoint.md) | :x:  | :white_check_mark: (CSV) |
