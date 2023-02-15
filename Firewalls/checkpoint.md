@@ -34,6 +34,20 @@ Note: Your appliance must be on version R81.20 for custom intelligence feeds to 
 8. Click ok, then click `publish` at the very top to commit these changes. Then in the top left, click on `Install Policy` to then push these policies to your firewall.
 8. Both feeds will now ingest IronRadar IOCs!
 
+### Photos of Setup:
+
+Example of setup:
+
+<img width="323" alt="Setup photo - IPs" src="https://user-images.githubusercontent.com/13635567/219121273-9845a2d8-56b6-4a4d-830a-3bf99519e4b0.png">
+
+Successful import of IP IOCs:
+
+<img width="436" alt="Successful import - IPs" src="https://user-images.githubusercontent.com/13635567/219121424-f54a83ea-6683-4c7d-b441-3337cf91c569.png">
+
+Successful import of domain IOCs:
+
+<img width="437" alt="Successful import - Domains" src="https://user-images.githubusercontent.com/13635567/219121465-c2ac49d1-0155-4865-9fca-84ec96d5a2a0.png">
+
 
 ## Troubleshooting Tips
 
