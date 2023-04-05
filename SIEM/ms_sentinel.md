@@ -5,7 +5,7 @@
 1. Open Microsoft Sentinel in the Azure portal
 2. Click on your analytic workspace
 3. Under configuration, click on data connectors
-4. Search for “taxi” and select the `Threat Intelligence - TAXII` connector by Microsoft
+4. Search for “taxii” and select the `Threat Intelligence - TAXII` connector by Microsoft
 5. Click open connector page and enter the following under configuration:
 - Friendly Name: `IronRadar`
 - URL: `https://opencti.ironradar.threatanalysis.io/taxii2/root/`
