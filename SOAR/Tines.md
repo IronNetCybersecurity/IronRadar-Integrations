@@ -10,8 +10,8 @@
 
 3. Drag and drop one of the integration groups into your story.
 
-<img src="images/tines-templates.png" width=100 height=100>
+<img src="images/tines-templates.png" width=50% height=50%>
 
 1. You will notice, to interact with the IronRadar API, you will need to add a credential to your Tines tenant called `IronRadar`. This should be set to the value of the API key provided when purchasing access to the service.
 
-<img src="images/tines-ironradar-credential.png" width=100 height=100>
+<img src="images/tines-ironradar-credential.png" width=25% height=25%>
